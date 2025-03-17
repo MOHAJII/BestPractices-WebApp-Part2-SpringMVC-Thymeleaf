@@ -13,10 +13,10 @@ import java.util.List;
 public class PatientController {
     private PatientRepository patientRepository;
 
-//    @GetMapping("/index")
-//    public String index(Model model) {
-//        List<Patient> patients = patientRepository.findAll();
-//        model.addAttribute("patients", patients);
-//        return "patients";
-//    }
+    @GetMapping("/index")
+    public String index(Model model) {
+        List<Patient> patients = patientRepository.findAll();
+        model.addAttribute("patientsList", patients);
+        return "patients";
+    }
 }
