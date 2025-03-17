@@ -30,7 +30,7 @@ public class SpringMvcThymeleafApplication {
 
             patientRepository.findAll().forEach(System.out::println);
 
-            System.out.println("***************************************\n\n\n");
+            System.out.println("**************************************\n\n\n");
             System.out.println("Testing the find by name contains : ");
             List<Patient> patients = patientRepository.findByNameContainsIgnoreCase("y");
             patients.forEach(System.out::println);
