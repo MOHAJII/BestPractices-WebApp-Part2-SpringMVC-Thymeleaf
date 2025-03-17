@@ -17,14 +17,14 @@ public class SpringMvcThymeleafApplication {
     @Bean
     CommandLineRunner commandLineRunner(PatientRepository patientRepository) {
         return args -> {
-            patientRepository.save(Patient.builder().nom("Ahmad").malade(false).score(20).build());
-            patientRepository.save(Patient.builder().nom("Mohammed").malade(false).score(20).build());
-            patientRepository.save(Patient.builder().nom("Hamid").malade(true).score(20).build());
-            patientRepository.save(Patient.builder().nom("Moustafa").malade(true).score(20).build());
-            patientRepository.save(Patient.builder().nom("Yasser").malade(true).score(20).build());
-            patientRepository.save(Patient.builder().nom("Omar").malade(false).score(20).build());
-            patientRepository.save(Patient.builder().nom("Zakaria").malade(false).score(20).build());
-            patientRepository.save(Patient.builder().nom("Mourad").malade(false).score(20).build());
+            patientRepository.save(Patient.builder().name("Ahmad").sick(false).score(20).build());
+            patientRepository.save(Patient.builder().name("Mohammed").sick(false).score(20).build());
+            patientRepository.save(Patient.builder().name("Hamid").sick(true).score(20).build());
+            patientRepository.save(Patient.builder().name("Moustafa").sick(true).score(20).build());
+            patientRepository.save(Patient.builder().name("Yasser").sick(true).score(20).build());
+            patientRepository.save(Patient.builder().name("Omar").sick(false).score(20).build());
+            patientRepository.save(Patient.builder().name("Zakaria").sick(false).score(20).build());
+            patientRepository.save(Patient.builder().name("Mourad").sick(false).score(20).build());
 
             patientRepository.findAll().forEach(System.out::println);
         };
