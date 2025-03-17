@@ -7,6 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.List;
+
 @SpringBootApplication
 public class SpringMvcThymeleafApplication {
 
@@ -27,6 +29,11 @@ public class SpringMvcThymeleafApplication {
             patientRepository.save(Patient.builder().name("Mourad").sick(false).score(20).build());
 
             patientRepository.findAll().forEach(System.out::println);
+
+            System.out.println("****************************************\n\n\n");
+            System.out.println("Testing the find by name contains : ");
+            List<Patient> patients = patientRepository.findByNameContainsIgnoreCase("y");
+            patients.forEach(System.out::println);
         };
     }
 }
