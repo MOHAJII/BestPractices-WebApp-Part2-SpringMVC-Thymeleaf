@@ -9,26 +9,33 @@
 </head>
 <body>
   <h1>Patients</h1>
-  <table class="table">
-    <thead>
-        <tr>
-            <th>Patient ID</th>
-            <th>Name</th>
-            <th>BirthDay</th>
-            <th>Is Sick</th>
-            <th>Score</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr th:each="patient : ${patientsList}">
-            <td th:text="${patient.id}"></td>
-            <td th:text="${patient.name}"></td>
-            <td th:text="${patient.birthDate}"></td>
-            <td th:text="${patient.isSick()}"></td>
-            <td th:text="${patient.score}"></td>
-        </tr>
-    </tbody>
-  </table>
+  <div class="card">
+      <div class="card-header">Patients Management</div>
+      <div class="card-body">
+          <div class="table-responsive">
+              <table class="table table-bordered">
+                  <thead>
+                      <tr>
+                          <th>Patient ID</th>
+                          <th>Name</th>
+                          <th>BirthDay</th>
+                          <th>Is Sick</th>
+                          <th>Score</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr th:each="patient : ${patientsList}">
+                          <td th:text="${patient.id}"></td>
+                          <td th:text="${patient.name}"></td>
+                          <td th:text="${patient.birthDate}"></td>
+                          <td th:text="${patient.isSick()}"></td>
+                          <td th:text="${patient.score}"></td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
 
-</body>
+  </div>
+  </body>
 </html>
