@@ -12,7 +12,7 @@ import java.util.List;
 
 @Repository
 public interface PatientRepository extends JpaRepository<Patient, Long> {
-    List<Patient> findByNameContainsIgnoreCase(String keyword);
+    List<Patient> findByNameContainsIgnoreCase(String keywords);
 
     @Query("select p from Patient p where p.name like :x")
     List<Patient> search(@Param("x") String keyword);
