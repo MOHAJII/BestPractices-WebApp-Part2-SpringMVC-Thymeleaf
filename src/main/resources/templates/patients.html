@@ -12,6 +12,13 @@
   <div class="card p-4">
       <div class="card-header">Patients List</div>
       <div class="card-body">
+          <form method="get" th:action="@{index}">
+              <label for="keyword" class="description-from-type-label">Keyword</label>
+              <div class="input-group mb-3">
+                  <input type="text" class="form-control w-25" id="keyword" name="keyword" placeholder="Enter Keyword" th:value="${keyword}">
+                  <button type="submit" class="btn btn-info">Search</button>
+              </div>
+          </form>
           <div class="table-responsive">
               <table class="table table-bordered">
                   <thead>
@@ -36,7 +43,7 @@
               <div class="w-100">
                   <ul class="nav nav-pills justify-content-center">
                       <li th:each="page, status:${pages}" class="page-item">
-                          <a th:href="@{/index(page=${status.index}, size=5)}"
+                          <a th:href="@{/index(page=${status.index}, size=5, keyword=${keyword})}"
                              th:text="${status.index}"
                              th:class="${currentPage == status.index} ? 'btn btn-info' : 'btn btn-outline-info'"></a>
                       </li>
