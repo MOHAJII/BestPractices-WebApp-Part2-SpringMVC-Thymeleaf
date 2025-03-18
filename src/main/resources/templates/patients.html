@@ -40,8 +40,9 @@
                     <td th:text="${patient.isSick()}"></td>
                     <td th:text="${patient.score}"></td>
                     <td>
-                        <a th:href="@{delete(id = ${patient.id}, page = ${currentPage}, keyword = ${keyword})}" class="btn btn-outline-danger"
-                           onclick="return confirm('Are you sure?')">Delete</a>
+                        <a th:href="@{delete(id = ${patient.id}, page = ${currentPage}, keyword = ${keyword})}"
+                           class="btn btn-outline-danger bi bi-trash-fill"
+                           onclick="return confirm('Are you sure?')"></a>
                     </td>
                 </tr>
                 </tbody>
