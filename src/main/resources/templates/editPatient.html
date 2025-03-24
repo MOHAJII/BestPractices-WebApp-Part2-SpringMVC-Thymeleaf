@@ -17,19 +17,15 @@
             </div>
             <div class="card-body">
                 <form method="post" th:action="@{/save(page=${currentPage}, keyword=${keyword})}">
-                    <div class="form-group">
-                        <label for="id" class="text-xl-start">ID</label>
-                        <input type="text" class="form-control" id="id" name="id" th:value="${patient.id}">
-                        <span th:errors="${patient.name}" class="text-danger"></span>
-                    </div>
-
+                    <input type="hidden" class="form-control" id="id" name="id" th:value="${patient.id}" >
                     <div class="form-group">
                         <label for="name" class="text-xl-start">Name</label>
                         <input type="text" class="form-control" id="name" name="name" th:value="${patient.name}">
                     </div>
                     <div class="form-group">
                         <label for="birthDate">Birthday</label>
-                        <input type="date" class="form-control" id="birthDate" name="birthDate" th:value="${patient.birthDate}">
+                        <input type="date" class="form-control" id="birthDate" name="birthDate"
+                               th:value="${patient.birthDate}">
                         <span th:errors="${patient.birthDate}" class="text-danger"></span>
                     </div>
                     <div>
