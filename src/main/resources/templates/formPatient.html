@@ -18,24 +18,23 @@
             <div class="card-body">
                 <form method="post" th:action="@{/save}">
                     <div class="form-group">
-                        <label for="name">Name</label>
+                        <label for="name" class="text-xl-start">Name</label>
                         <input type="text" class="form-control" id="name" name="name" th:value="${patient.name}">
-                        <span th:errors="${patient.name}"></span>
+                        <span th:errors="${patient.name}" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label for="birthDate">Birthday</label>
                         <input type="date" class="form-control" id="birthDate" name="birthDate" th:value="${patient.birthDate}">
-                        <span th:errors="${patient.birthDate}"></span>
+                        <span th:errors="${patient.birthDate}" class="text-danger"></span>
                     </div>
                     <div>
                         <label for="sick">Sick</label>
                         <input type="checkbox" name="sick" id="sick" th:checked="${patient.sick}">
-                        <span th:errors="${patient.sick}"></span>
                     </div>
                     <div class="form-group">
                         <label for="score">Score</label>
                         <input type="text" class="form-control" id="score" name="score" th:value="${patient.score}">
-                        <span th:errors="${patient.score}"></span>
+                        <span th:errors="${patient.score}" class="text-danger"></span>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

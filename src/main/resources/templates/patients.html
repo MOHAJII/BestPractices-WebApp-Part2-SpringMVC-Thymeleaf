@@ -30,7 +30,8 @@
                         <th>Birthday</th>
                         <th>Is Sick</th>
                         <th>Score</th>
-                        <th>Action</th>
+                        <th>Delete</th>
+                        <th>Edit</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -44,6 +45,11 @@
                             <a th:href="@{delete(id = ${patient.id}, page = ${currentPage}, keyword = ${keyword})}"
                                class="btn btn-outline-danger bi bi-trash-fill"
                                onclick="return confirm('Are you sure?')"></a>
+                        </td>
+                        <td>
+                            <a th:href="@{editPatient(id = ${patient.id}, page = ${currentPage}, keyword = ${keyword})}"
+                               class="btn btn-outline-success bi bi-pencil-fill">
+                            </a>
                         </td>
                     </tr>
                     </tbody>
