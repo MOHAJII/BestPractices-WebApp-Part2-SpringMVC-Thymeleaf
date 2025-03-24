@@ -1,12 +1,10 @@
 package net.haji.springmvcthymeleaf.dao.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity @AllArgsConstructor @NoArgsConstructor @Builder @Getter @ToString
 @Setter
@@ -15,7 +13,10 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private Date birthDate;
+
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate birthDate;
     private boolean sick;
     private int score;
 }

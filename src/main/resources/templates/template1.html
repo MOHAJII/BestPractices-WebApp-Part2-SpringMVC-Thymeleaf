@@ -12,22 +12,22 @@
     <div class="container-fluid">
         <!-- Links -->
         <ul class="navbar-nav">
-            <li class="navbar-brand">
-            <a class="" href="#">
+            <li class="navbar-item">
+            <a class="navbar-brand" th:href="@{/index}">
                 Patients Management
             </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" th:href="@{/index}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" th:href="@{/index}">About</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Patients</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" th:href="@{/formPatients}">New</a></li>
-                    <li><a class="dropdown-item" th:href="@{index}">Search</a></li>
+                    <li><a class="dropdown-item" th:href="@{/index}">Search</a></li>
                 </ul>
             </li>
         </ul>

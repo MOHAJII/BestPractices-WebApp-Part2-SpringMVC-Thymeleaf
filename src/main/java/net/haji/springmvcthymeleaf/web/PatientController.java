@@ -1,7 +1,6 @@
 package net.haji.springmvcthymeleaf.web;
 
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import net.haji.springmvcthymeleaf.dao.entities.Patient;
 import net.haji.springmvcthymeleaf.dao.repositories.PatientRepository;
 import org.springframework.data.domain.Page;
@@ -11,8 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.List;
 
 @Controller
 @AllArgsConstructor
@@ -42,5 +39,16 @@ public class PatientController {
        return "redirect:/index?page="+page+"&size="+size+"&keyword="+keyword;
     }
 
+    @GetMapping("/formPatients")
+    public String formPatients(Model model) {
+        model.addAttribute("patient", new Patient());
+        return "formPatients";
+    }
 
+    @PostMapping("/save")
+    public String save(Model model, Patient patient) {
+        patientRepository.save(patient);
+        System.out.println(patient);
+        return "formPatients";
+    }
 }

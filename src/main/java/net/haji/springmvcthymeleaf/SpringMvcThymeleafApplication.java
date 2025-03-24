@@ -16,7 +16,7 @@ public class SpringMvcThymeleafApplication {
         SpringApplication.run(SpringMvcThymeleafApplication.class, args);
     }
 
-    @Bean
+    //@Bean
     CommandLineRunner commandLineRunner(PatientRepository patientRepository) {
         return args -> {
             patientRepository.save(Patient.builder().name("Ahmad").sick(false).score(20).build());
