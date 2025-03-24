@@ -1,6 +1,7 @@
 package net.haji.springmvcthymeleaf.web;
 
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import net.haji.springmvcthymeleaf.dao.entities.Patient;
 import net.haji.springmvcthymeleaf.dao.repositories.PatientRepository;
 import org.springframework.data.domain.Page;
@@ -13,7 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@Controller @AllArgsConstructor
+@Controller
+@AllArgsConstructor
 public class PatientController {
     private PatientRepository patientRepository;
 
@@ -37,7 +39,7 @@ public class PatientController {
                          @RequestParam(name = "size", defaultValue = "4") int size,
                          @RequestParam(name = "keyword", defaultValue = "") String keyword) {
        patientRepository.deleteById(id);
-       return "redirect:/index?page="+page+"&size"+size+"&keyword"+keyword;
+       return "redirect:/index?page="+page+"&size="+size+"&keyword="+keyword;
     }
 
 
